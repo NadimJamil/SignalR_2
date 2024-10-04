@@ -82,10 +82,12 @@ export class ChatComponent  {
 
   createChannel(){
     // TODO: Ajouter un invoke
+    this.hubConnection?.invoke('CreateChannel', this.newChannelName)
   }
 
   deleteChannel(channel: Channel){
     // TODO: Ajouter un invoke
+    this.hubConnection!.invoke('DeleteChannel', channel.id)
   }
 
   leaveChannel(){
